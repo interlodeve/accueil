@@ -1,0 +1,81 @@
+<html>
+
+<head>
+<title>Page 1 Title</title>
+
+<!-- ============ PUT IN HEAD ============== -->
+<script type="text/javascript">
+<!--
+/* Author: Robert Darrell - http://www.ironspider.ca/ */
+// This part defines the function that calls up bookmark dialog
+var url = document.location;
+var t = document.title;
+function addBookmark() {
+	if (window.sidebar) { 
+	window.sidebar.addPanel(t,url,""); 
+	} else if( document.all ) {
+	window.external.AddFavorite(url,t);
+	} else if( window.opera && window.print ) {
+	return true;
+	}
+}
+// This part reloads orphaned pages into the frameset
+if (top.location == self.location) {
+location.replace("index.htm?" + url + "&content");
+}
+
+// -->
+</script>
+
+</head>
+
+<body>
+
+<!-- ============ PUT IN BODY ============== -->
+<p align="right">
+<script type="text/javascript">
+<!--
+/* Author: Robert Darrell - http://www.ironspider.ca/ */
+// This part writes the bookmark link into your web page
+if ( window.sidebar ) {
+	document.write('<a href="javascript:addBookmark();">Bookmark this page!<\/a>');
+	} else if( window.opera && window.print ) {
+	document.write('<a href="#" onclick="addBookmark" rel="sidebar" '); 
+	document.write('title="' + t + '">Bookmark this page!<\/a>')
+	} else if( document.all ) {
+	document.write('<a href="javascript:addBookmark();">Add to favorites!<\/a>');
+}
+// -->
+</script>
+
+<center><h1>PAGE 1 TITLE GOES HERE</h1></center>
+
+<!-- ============ BEGIN FILLER TEXT. REPLACE WITH YOUR CONTENT ============== -->
+This <i>SmartFrames</i> layout has the following features:<br><br>
+<ol type="1" class="List1">
+<li>It uses META tags and the <code>noframes</code> element in the frameset document to help search engines index your site.</li>
+<li>It uses Javascript to write a cross-browser compatible hyperlink in the top right corner of the content frame that the user can click on to create a proper browser bookmark ("favorites" in Internet Explorer).</li>
+<li>It uses Javascript to write the actual web address of the content page at the bottom to help users when sending links.</li>
+<li>It uses Javascript to make sure that all frame source pages are always loaded inside of the frame layout.</li>
+</ol>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus sagittis sollicitudin odio. Sed consequat ante sit amet orci. In ut pede. Vivamus feugiat. Nunc vel urna sed mauris posuere blandit. Suspendisse elementum, ipsum eget cursus auctor, augue lectus pharetra ante, ut venenatis felis tortor non nisl. Aliquam ligula augue, ultricies condimentum, imperdiet a, consectetuer sit amet, nunc. Phasellus eu sem id libero adipiscing sollicitudin. Donec porttitor arcu at velit. Sed sagittis. Donec pretium elit in nulla. Nam tincidunt egestas felis. Ut nunc. Etiam adipiscing erat vitae mauris. Donec urna metus, pulvinar vitae, egestas euismod, lobortis vitae, velit. Phasellus vulputate.  <br>
+<br>
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi massa. Donec eros. Aenean elementum massa pellentesque eros. In ullamcorper ante sit amet ipsum. Donec a lacus non nunc egestas mollis. Nunc quis quam. In pretium. In dui felis, accumsan vel, hendrerit lobortis, porttitor egestas, nibh. Nulla placerat odio et urna. Quisque tempus quam a risus. Vivamus eget enim. <br>
+<br><br><br><br>
+<!-- ============ END FILLER TEXT ============== -->
+
+
+<!-- ============ PUT IN BODY ============== -->
+<p align="center">The URL to this web page is ~<br><b><script type="text/javascript">
+<!--
+// This part writes the url of page (helps users when emailing links)
+document.write('<code>' + url + '<\/code>');
+// -->
+</script></b>
+
+<!-- ============ USE LINKS ON ALL CONTENT PAGES TO HELP SEARCH ENGINES ============== -->
+<p align="center"><a href="index.htm" target="_top">HOME</a>&nbsp;&nbsp;&nbsp;<a href="page2.htm">NEXT</a>
+
+</body>
+
+</html>
