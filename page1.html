@@ -21,7 +21,7 @@ function addBookmark() {
 }
 // This part reloads orphaned pages into the frameset
 if (top.location == self.location) {
-location.replace("index.html" + url + "&content");
+location.replace("index.htm?" + url + "&content");
 }
 
 // -->
