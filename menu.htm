@@ -1,0 +1,43 @@
+<html>
+
+<head>
+<title>Site Menu</title>
+
+<!-- ============ PUT IN HEAD ============== -->
+<script type="text/javascript">
+<!--
+/* Author: Robert Darrell - http://www.ironspider.ca/ */
+// This part defines the function that calls up bookmark dialog
+var url = document.location;
+var t = document.title;
+function addBookmark() {
+	if (window.sidebar) { 
+	window.sidebar.addPanel(t,url,""); 
+	} else if( document.all ) {
+	window.external.AddFavorite(url,t);
+	} else if( window.opera && window.print ) {
+	return true;
+	}
+}
+// This part reloads orphaned pages into the frameset
+if (top.location == self.location) {
+location.replace("index.htm?" + url + "&menu");
+}
+
+// -->
+</script>
+
+</head>
+
+<body bgcolor="#c0c0c0">
+
+<center><h1>WEBSITE LOGO HERE</h1>
+
+<a href="page1.htm" target="content">Page 1</a><br>
+<a href="page2.htm" target="content">Page 2</a><br>
+<a href="page3.htm" target="content">Page 3</a><br>
+<a href="page4.htm" target="content">Page 4</a><br>
+
+</body>
+
+</html>
